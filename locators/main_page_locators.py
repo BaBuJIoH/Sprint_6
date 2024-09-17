@@ -25,10 +25,6 @@ class MainPageLocators:
                    (By.ID, 'accordion__panel-6'),
                    (By.ID, 'accordion__panel-7')]
 
-    BASE_URL = 'https://qa-scooter.praktikum-services.ru/'  # url главной страницы
-    ORDER_URL = 'https://qa-scooter.praktikum-services.ru/order'  # url страницы заказа
-    DZEN_URL = 'https://dzen.ru/'  # url страницы Дзен
-
     # Текст ответов для каждого вопроса в FAQ
     ANSWER_TEXTS = ('Сутки — 400 рублей. Оплата курьеру — наличными или картой.',
                     'Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.',
