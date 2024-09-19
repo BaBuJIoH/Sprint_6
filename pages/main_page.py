@@ -29,23 +29,13 @@ class MainPage(BasePage):
     # Нажать на вопрос по индексу
     @allure.step('Нажимаем на вопрос по индексу')
     def click_question(self, index):
+        self.scroll_to_element(MainPageLocators.QUESTIONS[index])
         self.click_element(MainPageLocators.QUESTIONS[index])
 
     # Получить ответ по индексу
     @allure.step('Получаем ответ по индексу')
     def get_answer_text(self, index):
-        self.wait_for_clickable(MainPageLocators.QUESTIONS[index])
-        self.get_answer(MainPageLocators.ANSWERS[index])
+        return self.get_answer(MainPageLocators.ANSWERS[index])
 
-    # Переключить на другую вкладку
-    @allure.step('переходим на другую вкладку')
-    def switch_to_new_tab(self):
-        self.switch_new_tab()
-
-    # Получаем url
-    def get_to_current_url(self):
-        self.get_current_url()
-
-    # Прокрутка страницы
-    def scroll_page_down(self, pixels):
-        self.scroll_down(pixels)
+    def click_cookie_button(self):
+        self.click_element(MainPageLocators.COOKIE_CONFIRM_BUTTON)

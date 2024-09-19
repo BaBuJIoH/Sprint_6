@@ -6,6 +6,7 @@ class MainPageLocators:
     ORDER_BUTTON_BOTTOM = (By.XPATH, '//button[contains(@class,"Button_Middle")]')  # Кнопка Заказать внизу страницы
     SCOOTER_LOGO = (By.XPATH, '//img[@alt="Scooter"]')  # Лого Самокат
     YANDEX_LOGO = (By.XPATH, '//img[@alt="Yandex"]')  # Лого Яндекс
+    COOKIE_CONFIRM_BUTTON = (By.XPATH, "//button[text()='да все привыкли']")
     # Кнопки вопросов
     QUESTIONS = [(By.ID, 'accordion__heading-0'),
                      (By.ID, 'accordion__heading-1'),

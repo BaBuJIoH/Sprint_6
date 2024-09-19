@@ -3,9 +3,7 @@ import allure
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
 
-class TestOrder(MainPage, OrderPage):
-    def __init__(self, driver):
-        super().__init__(driver)
+class TestOrder:
 
     #  Весь флоу позитивного сценария с двумя наборами данных через параметризацию.
     @allure.title('Позитивный сценарий заказа самоката')
@@ -14,13 +12,13 @@ class TestOrder(MainPage, OrderPage):
         ("Алексей", "Петров", "Москва, Кремль", "Арбатская", "89871234567", "20.09.2024"),
         ("Татьяна", "Сидорова", "Петербург, Невский пр.", "Невский проспект", "89897654321", "23.09.2024")
     ])
-    def test_order_scooter_top_button(self, name, surname, address, metro, phone, rental_date):
-
-        self.click_order_button_top()
-        self.fill_order_form(name, surname, address, metro, phone)
-        self.submit_order()
-        self.fill_rental_form(rental_date)
-        self.confirm_order()
-        self.confirm_yes_in_popup()
-        self.check_success_message()
-
+    def test_order_scooter_top_button(self, driver, name, surname, address, metro, phone, rental_date):
+        main_page = MainPage(driver)
+        order_page = OrderPage(driver)
+        main_page.click_order_button_top()
+        order_page.fill_order_form(name, surname, address, metro, phone)
+        order_page.submit_order()
+        order_page.fill_rental_form(rental_date)
+        order_page.confirm_order()
+        order_page.confirm_yes_in_popup()
+        order_page.check_success_message()

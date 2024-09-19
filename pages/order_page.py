@@ -30,7 +30,7 @@ class OrderPage(BasePage):
     @allure.step('Заполненяем форму "Про аренду"')
     def fill_rental_form(self, rental_date):
         self.send_keys(OrderPageLocators.DATE_INPUT, rental_date)
-        self.click_escape(OrderPageLocators.DATE_INPUT)
+        self.click_escape()
         self.click_element(OrderPageLocators.RENTAL_PERIOD_DROPDOWN)
         self.click_element(OrderPageLocators.RENTAL_PERIOD)
 
